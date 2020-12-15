@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import Header from './components/Header';
 import Title from './components/Title';
+import Table from './components/Table';
 
 export default function Calendar () {
-  // const currentDate = dayjs().now();
-  // const [selectedDate, setSelectedDate] = useState(dayjs().now());
+  const currentDate = dayjs();
   const [displayDate, setDisplayDate] = useState(dayjs());
-
   return (
     <div>
       <Title title='Test Calendar' />
@@ -15,6 +14,7 @@ export default function Calendar () {
         displayDate={displayDate}
         setDisplayDate={setDisplayDate}
       />
+      <Table displayDate={displayDate} />
     </div>
   );
 }
