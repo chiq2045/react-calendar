@@ -1,20 +1,25 @@
 import React from 'react';
-import { Button as ButtonType } from 'utils/types';
+import { ButtonProps } from 'utils/types';
 
 export const Button = ({
   color = 'plain',
   variant = 'solid',
-  glyph,
+  glyph = {
+    icon: '',
+    side: ''
+  },
+  onClick,
   children,
   ...props
-}: ButtonType) => {
+}: ButtonProps) => {
   const className = `
   ${color !== 'plain' ? `btn-${color}` : ''}
   ${variant !== 'solid' ? 'outline' : ''}
   ${glyph ? `fa-wrapper fa fa-${glyph.icon} ${glyph.side}` : ''}
   `;
+
   return (
-    <button className={className} {...props}>
+    <button className={className} onClick={onClick}>
       {children}
     </button>
   );

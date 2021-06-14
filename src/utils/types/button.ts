@@ -1,8 +1,9 @@
-export interface Button {
+export interface ButtonProps {
   color?: Color;
   variant?: Variant;
   glyph?: Glyph;
-  children: any;
+  children?: any;
+  onClick?: any;
 }
 
 type Color =
@@ -22,5 +23,5 @@ type Variant = 'solid' | 'outline';
 
 type Glyph = {
   icon: string;
-  side: '' | 'pad-left' | 'pad-right';
+  side?: '' | 'pad-left' | 'pad-right';
 };

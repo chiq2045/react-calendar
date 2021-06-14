@@ -1,4 +1,6 @@
 import React from 'react';
+import {Calendar} from 'views/calendar';
+
 export const App = () => (
-  <h1>React Calendar</h1>
+  <div className='padtop content'><Calendar /></div>
 )

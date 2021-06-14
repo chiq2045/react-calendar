@@ -1,3 +1,4 @@
-import { Button } from './button';
+import { ButtonProps } from './button';
+import {NewDateProps, HeaderProps} from './date'
 
-export { Button };
+export { ButtonProps, NewDateProps, HeaderProps };
