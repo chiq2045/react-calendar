@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "target": "ES5",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -8,11 +7,8 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
-    /* "isolatedModules": true, */
     "noEmit": false,
     "jsx": "react",
     "baseUrl": "src",
@@ -22,5 +18,5 @@
       "views": ["views"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "babel.config.json"]
 }
