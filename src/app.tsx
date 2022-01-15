@@ -7,7 +7,6 @@ import { CalendarLayout } from 'components/Layout';
 export const App = () => {
   const [viewDate, setViewDate] = useState(moment());
 
-  console.log(viewDate);
   return (
     <div className='m-1'>
       <BrowserRouter>

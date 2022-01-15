@@ -18,7 +18,6 @@ export const Week = ({ week }: WeekProps) => {
     return daysArray;
   }, [week]);
 
-  console.log('week', week.week());
   return (
     <div className='bg-indigo-400 p-1 m-1'>
       <div className='grid grid-cols-7'>

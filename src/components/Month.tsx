@@ -24,7 +24,6 @@ export const Month = ({ viewDate }: MonthProps) => {
     return weeksArray;
   }, [viewDate]);
 
-  console.log('weeks', weeks);
   return (
     <div className='bg-indigo-600 p-1'>
       {weeks.map((w) => (
