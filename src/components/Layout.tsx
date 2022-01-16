@@ -1,20 +1,14 @@
-import React, { useMemo } from 'react';
-import moment, { Moment } from 'moment';
+import React, { useContext, useMemo } from 'react';
+import moment from 'moment';
 import { Outlet } from 'react-router-dom';
+import { DateContext } from 'utils/DateProvider';
 
-interface CalendarLayoutProps {
-  viewDate: Moment;
-  goToNextMonth: () => void;
-  goToPrevMonth: () => void;
-}
-export const CalendarLayout = ({
-  viewDate,
-  goToPrevMonth,
-  goToNextMonth
-}: CalendarLayoutProps) => {
+export const CalendarLayout = () => {
+  const { month, goToPrevMonth, goToNextMonth } = useContext(DateContext);
+
   const displayDate = useMemo(
-    () => moment(viewDate).format('MMM DD YYYY'),
-    [viewDate]
+    () => moment(month).format('MMM DD YYYY'),
+    [month]
   );
 
   return (

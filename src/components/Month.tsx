@@ -1,28 +1,27 @@
-import React, { useMemo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import moment, { Moment } from 'moment';
 import { Week } from './Week';
+import { DateContext } from 'utils/DateProvider';
 
-interface MonthProps {
-  viewDate: Moment;
-}
-export const Month = ({ viewDate }: MonthProps) => {
+export const Month = () => {
+  const { month } = useContext(DateContext);
   const weeks = useMemo(() => {
     const weeksArray = new Array<Moment>();
-    const startOfWeek = moment(viewDate).startOf('M').week();
-    const endOfWeek = moment(viewDate).endOf('M').week();
+    const startOfWeek = moment(month).startOf('M').week();
+    const endOfWeek = moment(month).endOf('M').week();
     for (
       let i = startOfWeek;
       i <=
       (endOfWeek < startOfWeek
-        ? moment(viewDate).weeksInYear() + 1
+        ? moment(month).weeksInYear() + 1
         : endOfWeek);
       i++
     ) {
-      weeksArray.push(moment(viewDate).week(i));
+      weeksArray.push(moment(month).week(i));
     }
 
     return weeksArray;
-  }, [viewDate]);
+  }, [month]);
 
   return (
     <div className='bg-indigo-600 p-1'>
